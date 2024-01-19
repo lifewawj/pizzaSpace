@@ -1,0 +1,5 @@
+#  Hides the node_modules folder and its content
+node_modules
+
+# Hides SECRETS
+.env
