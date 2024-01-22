@@ -1,6 +1,7 @@
 // NPM Packages included
 const express = require('express');
 const path = require('path');
+const { sequelize } = require('./config/connection')
 
 // Create an app variable and set it to express to initialize the server
 const app = express();
@@ -15,6 +16,8 @@ app.get("/", (req, res) => {
 });
 
 // Inits the server, and sets up our server to listen for http requests
-app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT}`)
-);
+sequelize.sync().then(() => {
+  app.listen(PORT, () =>
+    console.log(`App listening at http://localhost:${PORT}`)
+  );
+});
