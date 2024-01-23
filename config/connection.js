@@ -15,6 +15,7 @@ const sequelize = process.env.JAWSDB_URL
         // Database location
         host: 'localhost',
         dialect: 'mysql',
+        port: 3306,
     });
 
 module.exports = { sequelize };
