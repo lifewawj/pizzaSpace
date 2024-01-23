@@ -13,6 +13,8 @@
 
 ## Usage
 
+Click Here to Visit our deployed app! -> https://pizza-space-376bdcd39e72.herokuapp.com/
+
 ## Features
 
 ## Credits
