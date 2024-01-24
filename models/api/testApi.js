@@ -2,7 +2,7 @@
 //API Read Access Token eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMjFlYWIzY2Q4MGMzYmNhNzdkMmJlY2VlOTRiOTUzNiIsInN1YiI6IjY1YTllMjBjMzU3YzAwMDBjN2Q2OWIzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SV-_5QG5VKxwVIqt9dsTV6f1StawzQYXlBgqfPRSVdc
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
-const API_KEY = 'api_key=121eab3cd80c3bca77d2becee94b9536';
+const API_KEY = 'api_key=9b62c3eb4a6bc8acd4e26602f16fa744';
 let SEARCH_URL =
   BASE_URL + 'search/movie?' + API_KEY + '&sort_by=popularity.desc&query=';
 
@@ -27,10 +27,12 @@ function renderMovies(res) {
   });
 }
 
+let search_input = document.getElementById('your_input_element_id');
+
 let f = document.getElementById('search_movie');
 f.addEventListener('click', () => {
   let user_input = search_input.value;
-  if (user_input && user_input.trim() != '') {
+  if (user_input && user_input.trim() !== '') {
     let query = SEARCH_URL + user_input;
     getMovies(query).then(renderMovies);
   }
