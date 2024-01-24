@@ -27,9 +27,9 @@ function renderMovies(res) {
   });
 }
 
-let search_input = document.getElementById('your_input_element_id');
+let search_input = document.getElementById('search_input');
 
-let f = document.getElementById('search_movie');
+let f = document.getElementById('search_input');
 f.addEventListener('click', () => {
   let user_input = search_input.value;
   if (user_input && user_input.trim() !== '') {
