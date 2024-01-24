@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Profile - PizzaSpace</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">PizzaSpace</a>
+      </div>
+    </nav>
+
+    <div class="container profile-page" style="padding-top: 80px">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-info">
+            <img
+              src="path/to/user-photo.jpg"
+              alt="Your Photo"
+              class="img-responsive"
+            />
+            <h3>@Username</h3>
+            <p><strong>Fav Toppings:</strong> Mushrooms, Pepperoni</p>
+            <p>
+              <strong>Fav Pizza Place:</strong>
+              <span id="fav-pizza-place">Pizzeria Name</span>
+            </p>
+            <p><a href="#">Facebook</a> | <a href="#">Twitter</a></p>
+          </div>
+          <div class="friends-list">
+            <h4>Your Dudes</h4>
+            <!-- List of friends -->
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="feed">
+            <h4>My Feed</h4>
+            <!-- User posts -->
+          </div>
+          <div class="last-movie-watched">
+            <h4>Last Movie Watched</h4>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter movie name"
+              id="movie-name"
+            />
+            <button class="btn btn-default" onclick="fetchMovieInfo()">
+              Find Movie
+            </button>
+            <!-- Place for movie API data -->
+          </div>
+          <div class="favorite-pizza-place">
+            <h4>My Fav Pizza Place</h4>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter pizza place"
+              id="pizza-place-name"
+            />
+            <button class="btn btn-default" onclick="fetchPizzaPlaceInfo()">
+              Find Place
+            </button>
+            <!-- Place for map API data -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="profile-page.js"></script>
+    <!-- Link to your JavaScript file -->
+  </body>
+</html>
