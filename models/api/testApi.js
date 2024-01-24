@@ -19,7 +19,7 @@ function getMovies(my_api) {
 
 function renderMovies(res) {
   let ul = document.getElementById('results');
-  ul.innerHTML = '';
+  ul.textContent = '';
   res.results.forEach((result) => {
     let li = document.createElement('li');
     li.appendChild(document.createTextNode(result.title));
