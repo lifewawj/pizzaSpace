@@ -2,7 +2,7 @@
 //API Read Access Token eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMjFlYWIzY2Q4MGMzYmNhNzdkMmJlY2VlOTRiOTUzNiIsInN1YiI6IjY1YTllMjBjMzU3YzAwMDBjN2Q2OWIzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SV-_5QG5VKxwVIqt9dsTV6f1StawzQYXlBgqfPRSVdc
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
-const API_KEY = 'api_key=9b62c3eb4a6bc8acd4e26602f16fa744';
+const API_KEY = 'api_key=121eab3cd80c3bca77d2becee94b9536';
 let SEARCH_URL =
   BASE_URL + 'search/movie?' + API_KEY + '&sort_by=popularity.desc&query=';
 
