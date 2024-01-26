@@ -3,3 +3,6 @@ node_modules
 
 # Hides SECRETS
 .env
+
+# Hides the Project-2 folder with the project readme.md file
+Project-2

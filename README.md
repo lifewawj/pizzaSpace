@@ -18,11 +18,14 @@ Hey there, pizza pals and movie fanatics! Slide into PizzaSpace, the ultimate ha
 
 ## Usage
 
+
 To get started with PizzaSpace:
 
 1. Create an account to personalize your profile.
 2. Share your favorite pizzas and movies.
 3. Connect with friends and explore recommendations.
+Click Here to Visit our deployed app! -> https://pizza-space-376bdcd39e72.herokuapp.com/
+
 
 ## Features
 
