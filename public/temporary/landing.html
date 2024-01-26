@@ -1,25 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Pizza Space Landing Page</title>
-</head>
-<body>
 
-    <header>
-        <h1>Pizza Space</h1>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PizzaSpace - Welcome!</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <!-- Link to your CSS file -->
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img
+              src="public/images/pslogo.png"
+              alt="PizzaSpace Logo"
+              style="max-height: 100%; display: inline-block"
+            />
+            PizzaSpace
+          </a>
+        </div>
 
-    <section>
-        <h2>Welcome to Pizza Space</h2>
-        <p>Hey there, pizza pals and movie fanatics! Slide into PizzaSpace, the ultimate hangout where pizza and movie magic come alive. Spruce up your profile with your primo pizza choices - be it classic pepperoni or a more adventurous combo. Share your latest film favorites and dive into discussions about the coolest new releases. It’s a place to connect with fellow 'Dudes', exchange totally tubular pizza recipes, and chat about all things film. Whether you’re into rooftop pizza parties or sewer-level movie marathons, PizzaSpace is your kind of scene. Grab a slice and surf on over. Cowabunga, dudes!</p>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Log In</a></li>
+            <li><a href="#" class="btn btn-primary navbar-btn">Sign Up</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+
+    <div id="landing" class="container-fluid text-center">
+      <h1>Welcome to PizzaSpace</h1>
+      <p>
+        Your slice of the web. Connect, share, and discover your favorite pizza
+        with friends.
+      </p>
+      <button class="btn btn-primary">Join PizzaSpace</button>
+    </div>
+
+    <section id="about-me" class="container">
+      <h2 class="text-center">About PizzaSpace</h2>
+      <p>
+        Hey there, pizza pals and movie fanatics! Glide into PizzaSpace, the
+        supreme haven where the zest of pizza and the thrill of movies blend
+        perfectly. Jazz up your profile with your top pizza picks, from the
+        timeless cheese and pepperoni to the bold and adventurous flavors.
+        Flaunt your favorite flicks, dive deep into discussions about the latest
+        blockbusters, and uncover hidden cinematic gems. PizzaSpace is more than
+        just a platform; it's a community. Here, you can connect with fellow
+        'Dudes', swap wicked pizza recipes, and spill the tea on all things
+        movies. Whether you're all about basking in the sun with a pizza slice
+        in hand or hosting epic movie nights in the comfort of your basement,
+        PizzaSpace is where you want to be. So grab a slice, hit the waves, and
+        join us. Cowabunga, dudes!
+      </p>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Pizza Space Co.</p>
-    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
 
-</body>
 </html>
