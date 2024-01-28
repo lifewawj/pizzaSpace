@@ -16,3 +16,13 @@ function randomPizza(my_api) {
       console.log(err.message);
     });
 }
+
+function renderPizza(res) {
+  let ul = document.getElementById('pizzaOfDay');
+  p.textContent = '';
+  res.results.forEach((pizzaOfDay) => {
+    let li = document.createElement('li');
+    li.appendChild(document.createTextNode(pizzaOfDay.title));
+    ul.appendChild(li);
+  });
+}
