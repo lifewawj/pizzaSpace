@@ -1,7 +1,7 @@
 // NPM Packages included
-const express = require('express');
-const path = require('path');
-const routes = require('./routes')
+const express = require('express'); // Imports the express package to run a server
+const path = require('path'); // Imports the NPM path
+const routes = require('./routes') // Import the routes from the routes
 
 // Import sequelize connection
 const { sequelize } = require('./config/connection')
