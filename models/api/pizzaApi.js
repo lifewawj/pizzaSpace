@@ -5,3 +5,14 @@
 const BASE_URL =
   'https://api.spoonacular.com/recipes/random?number=1&include-tags=pizza';
 const API_KEY = '549304fb09a74a5bb4ab89b9d72c70c1';
+
+function randomPizza(my_api) {
+  return fetch(my_api, {
+    method: 'GET',
+    cache: 'no-cache',
+  })
+    .then((res) => res.json())
+    .catch((err) => {
+      console.log(err.message);
+    });
+}
