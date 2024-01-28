@@ -1,15 +1,16 @@
 // Retrieves and Imports the sequelize variable from connection.js file
-const { DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const { sequelize } = require('../config/connection.js');
 
 // Creating a Table/Model
-class UserProfile extends Model { }
+class UserProfile extends Model {}
 
 UserProfile.init(
     {
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            primaryKey: true,
             autoIncrement: true,
         },
         first_name: {

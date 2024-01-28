@@ -1,11 +1,11 @@
-const seedUser = require('./user-seeds');
-const seedUserProfile = require('./userProfile-seeds');
+const seedUser = require('./user-seeds.js');
+const seedUserProfile = require('./userProfile-seeds.js');
 
-const sequalize = require('../config/connection.js');
+const { sequelize } = require('../config/connection.js');
 
 const seedAll = async () => {
-    // SYNCS SEQUALIZED to the database
-    await sequalize.sync({ force: true });
+    // SYNCS SEQUELIZE to the database
+    await sequelize.sync({ force: true });
     console.log('\n----- DATABASE SYNCED -----\n');
 
     await seedUser();
