@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIZZASPACE</title>
+    <link rel="stylesheet" type="text/css" href="./public/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/c4254e24a8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-left">
+        <a href="explore.html"
+          ><img src="public/images/pslogo.png" class="logo"
+        /></a>
+      </div>
+
+      <div class="nav-right">
+        <!----------------- ADD HANDLING PROFILE LINKS----------->
+        <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+          <img src="public/images/tmnt/raphael.jpeg" />
+        </div>
+      </div>
+      <!-- ------dropdown-settings-menu--------- -->
+      <div class="settings-menu">
+        <div id="dark-btn">
+          <span></span>
+        </div>
+        <div class="settings-menu-inner">
+          <div class="user-profile">
+            <img src="images/tmnt/raphael.jpeg" />
+            <div>
+              <p>Raphael</p>
+              <a href="profile.html">See your profile</a>
+            </div>
+          </div>
+          <hr />
+          <div class="user-profile">
+            <img src="public/images/feedback.png" />
+            <div>
+              <p>Give Feedback</p>
+              <a href="">Help us improve the new deisgn</a>
+            </div>
+          </div>
+          <hr />
+          <div class="settings-links">
+            <img src="public/images/setting.png" class="settings-icon" />
+            <a href=""
+              >Settings & Privacy
+              <img src="public/images/arrow.png" width="10px"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img src="public/images/help.png" class="settings-icon" />
+            <a href=""
+              >Help & Support <img src="public/images/arrow.png" width="10px"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img src="public/images/display.png" class="settings-icon" />
+            <a href=""
+              >Display & Accessibility
+              <img src="public/images/arrow.png" width="10px"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img src="public/images/logout.png" class="settings-icon" />
+            <a href=""
+              >Logout <img src="public/images/arrow.png" width="10px"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="profile-container">
+      <!-- Left Column -->
+      <div class="profile-left">
+        <!-- User Photo -->
+        <div class="user-photo">
+          <img src="public/images/tmnt/raphael.jpeg" alt="User Photo" />
+        </div>
+
+        <!-- Username -->
+        <div class="username">
+          <h3>USERNAME</h3>
+        </div>
+
+        <!-- Pronouns -->
+        <div class="pronouns">
+          <p>Pronouns:</p>
+        </div>
+
+        <!-- Location -->
+        <div class="location">
+          <p>Location: City, State, Country</p>
+        </div>
+
+        <!-- Favorite Movie Quote -->
+        <div class="favorite-movie-quote">
+          <p>Favorite Movie Quote:</p>
+        </div>
+
+        <!-- Dudes (Friends) Section -->
+        <div class="dudes-section">
+          <h4>Dudes</h4>
+          <div class="dudes-list">
+            <!-- Dudes list goes here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Column -->
+      <div class="profile-center">
+        <!-- User Posts or Feed -->
+        <div class="user-feed">
+          <!-- User posts go here -->
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="profile-right">
+        <!-- PIZZASPACE Section -->
+        <div class="pizzaspace-section">
+          <h4>PIZZASPACE</h4>
+          <div class="favorite-pizza">Favorite Pizza:</div>
+          <div class="least-favorite-topping">Least Favorite Topping:</div>
+          <div class="favorite-crust-style">Favorite Crust Style:</div>
+          <div class="go-to-pizza-place">Go-to Pizza Place:</div>
+          <!--Add Google API to find Pizza Place-->
+        </div>
+
+        <!-- MOVIESPACE Section -->
+        <div class="moviespace-section">
+          <h4>MOVIESPACE</h4>
+          <div class="favorite-movie">Favorite Movie:</div>
+          <div class="go-to-movie-genre">Go-to Movie Genre:</div>
+          <div class="favorite-movie-snack">
+            Favorite Movie Snack (besides pizza):
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <!-- ... [Your existing footer code] ... -->
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIZZASPACE</title>
+      <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+    <script
+      src="https://kit.fontawesome.com/c4254e24a8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <a href="explore.html"><img src="public/images/pslogo.png" class="logo" /></a>
+      </div>
+
+      <div class="nav-right">
+        <!----------------- ADD HANDLING PROFILE LINKS----------->
+        <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+          <img src="public/images/tmnt/raphael.jpeg" />
+        </div>
+      </div>
+      <!-- ------dropdown-settings-menu--------- -->
+      <div class="settings-menu">
+        <div id="dark-btn">
+          <span></span>
+        </div>
+        <div class="settings-menu-inner">
+          <div class="user-profile">
+            <img src="images/tmnt/raphael.jpeg" />
+            <div>
+              <p>Raphael</p>
+              <a href="profile.html">See your profile</a>
+            </div>
+          </div>
+          <hr />
+          <div class="user-profile">
+            <img src="public/images/feedback.png" />
+            <div>
+              <p>Give Feedback</p>
+              <a href="">Help us improve the new deisgn</a>
+            </div>
+          </div>
+          <hr />
+          <div class="settings-links">
+            <img src="public/images/setting.png" class="settings-icon" />
+            <a href=""
+              >Settings & Privacy <img src="public/images/arrow.png" width="10px"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img src="public/images/help.png" class="settings-icon" />
+            <a href=""
+              >Help & Support <img src="public/images/arrow.png" width="10px"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img src="public/images/display.png" class="settings-icon" />
+            <a href=""
+              >Display & Accessibility <img src="public/images/arrow.png" width="10px"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img src="public/images/logout.png" class="settings-icon" />
+            <a href="">Logout <img src="public/images/arrow.png" width="10px" /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="left-sidebar">
+        <div class="imp-links">
+          <a href="#"><img src="public/images/news.png" /> Explore</a>
+          <a href="#"><img src="public/images/friends.png" /> Dudes</a>
+        </div>
+      </div>
+      <!----------------- middle content--------- -->
+      <div class="main-content">
+        <div class="write-post-container">
+          <div class="user-profile">
+            <img src="public/images/tmnt/raphael.jpeg" />
+            <div>
+              <p>Raphael</p>
+            </div>
+          </div>
+
+          <!----------------- ADD API HANDLING TO POST LINKS----------->
+          <div class="post-input-container">
+            <textarea rows="3" placeholder="Sup, Dude?"></textarea>
+            <div class="add-post-links">
+              <a href="#"><img src="public/images/live-video.png" /> Watching</a>
+              <a href="#"><img src="public/images/feeling.png" /> Eating</a>
+              <a href="#"><img src="public/images/photo.png" /> Photo/Video</a>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="public/images/tmnt/raphael.jpeg" />
+              <div>
+                <p>Raphael</p>
+                <!----------------- AUTO GENERATE DATE/TIME FOR POST----------->
+                <span>January 25,2024 13:40 pm</span>
+              </div>
+            </div>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+          <p class="post-text">Pizza party with my dudes!</p>
+          <img src="public/images/tmnt/turtles3.jpeg" class="post-img" />
+          <div class="post-row">
+            <div class="activity-icons">
+              <div><img src="public/images/like-blue.png" /></div>
+              <div><img src="public/images/comments.png" /></div>
+              <!--How do we make these clickable and link to the post-->
+            </div>
+            <div class="post-profile-icon">
+              <img src="public/images/tmnt/raphael.jpeg" />
+              <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="load-more-btn">Load More</button>
+      </div>
+      <!-- ----------right sidebar----------- -->
+      <div class="right-sidebar">
+        <!----------------- PIZZA OF THE DAY API----------->
+        <div class="sidebar-title">
+          <h4>Pizza of the Day</h4>
+        </div>
+
+        <div class="potd"></div>
+        <!--INSERT API HERE-->
+
+        <!----------------- MOVIE SUGGESTION API----------->
+        <div class="sidebar-title">
+          <h4>Movie Suggestion</h4>
+        </div>
+
+        <div class="movsug"></div>
+        <!--INSERT API HERE-->
+
+        <div class="sidebar-title">
+          <h4>My Dudes</h4>
+        </div>
+
+        <div class="dudes-list">
+          <div class="dudes"><img src="public/images/tmnt/donatello.webp" /></div>
+          <p>Donatello</p>
+        </div>
+        <div class="dudes-list">
+          <div class="dudes"><img src="public/images/tmnt/leonardo.jpeg" /></div>
+          <p>Leonardo</p>
+        </div>
+        <div class="dudes-list">
+          <div class="dudes">
+            <img src="public/images/tmnt/michaelangelo.jpeg" />
+          </div>
+          <p>Michaelangelo</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Copyright 2024 - PIZZASPACE</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+    <script src="script.js"></script>
+  </body>
+</html>

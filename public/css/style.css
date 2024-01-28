@@ -1,141 +1,611 @@
-:root {
-  /* Color Scheme */
-  --green: #38761d;
-  --orange: #ce7e00;
-  --blue: #3d85c6;
-  --purple: #6a329f;
-  --red: #cc0000;
-  --black: #000000;
-  --white: #ffffff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
 
-  /* Typography */
-  --font: "Arial", sans-serif;
+:root {
+  --body-color: #efefef;
+  --nav-color: #1876f2;
+  --bg-color: #fff;
+  --primary-color: #edf2fc;
+  --secondary-color: #212121;
+}
+
+.dark-theme {
+  --body-color: #0a0a0a;
+  --nav-color: #000;
+  --bg-color: #000;
 }
 
 body {
-  font-family: var(--font);
-  color: var(--black);
-  background-color: var(--white);
-  margin: 0;
-  padding-top: 70px; /* Adjust based on the navbar height */
+  background: var(--body-color);
+  transition: background 0.3s;
 }
 
-a,
-a:visited {
-  color: var(--blue);
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nav-color);
+  padding: 5px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  width: 160px;
+  margin-right: 45px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left ul li img {
+  width: 28px;
+  margin: 0 15px;
+}
+
+.nav-left ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.nav-user-icon img {
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav-user-icon {
+  margin-left: 30px;
+}
+
+.search-box {
+  background: #efefef;
+  width: 350px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.dudes {
+  position: relative;
+}
+.dudes::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  right: 0px;
+  top: 0;
+  background: #41db51;
+  position: absolute;
+}
+.container {
+  padding: 13px 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.left-sidebar {
+  /* background: #cbdffa; */
+  flex-basis: 25%;
+  position: sticky;
+  top: 70px;
+  align-self: flex-start;
+  padding: 10px;
+}
+.right-sidebar {
+  background: var(--bg-color);
+  flex-basis: 25%;
+  position: sticky;
+  top: 70px;
+  align-self: flex-start;
+  color: #626262;
+  padding: 20px;
+  border-radius: 4px;
+}
+.main-content {
+  /* background: #cbdffa; */
+  flex-basis: 47%;
+}
+/* ----------left sidebar------ */
+.imp-links a,
+.shortcut-links a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  color: #626262;
+  width: fit-content;
+}
+
+.imp-links a img {
+  width: 25px;
+  margin-right: 15px;
+}
+
+.imp-links a:last-child {
+  color: #1876f2;
+}
+.imp-links {
+  border-bottom: 1px solid #ccc;
+}
+
+.shortcut-links a img {
+  width: 40px;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+.shortcut-links p {
+  margin: 25px 0;
+  color: #626262;
+  font-weight: 500;
+}
+/* ------------right sidebar------- */
+
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.right-sidebar h4 {
+  font-weight: 600;
+  font-size: 16px;
+}
+.sidebar-title a {
+  text-decoration: none;
+  color: #1876f2;
+  font-size: 11px;
+}
+
+.potd {
+  display: flex;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.potd-left {
+  border-radius: 10px;
+  height: 65px;
+  width: 65px;
+  margin-right: 15px;
+  padding-top: 10px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.potd-left span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: #1876f2;
+  color: #fff;
+  font-size: 10px;
+  padding: 4px 0;
+}
+.potd p {
+  font-size: 12px;
+}
+.potd a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #1876f2;
+}
+
+.dudes-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.dudes-list:last-child {
+  margin-bottom: 0px;
+}
+.dudes-list .dudes {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.dudes-list .dudes img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.dudes-list .dudes::after {
+  top: unset;
+  bottom: 5px;
+}
+
+/* ------------------ main content ------------- */
+
+/* ------------write post --------- */
+.write-post-container {
+  width: 100%;
+  background: var(--bg-color);
+  border-radius: 6px;
+  padding: 20px;
+  color: #626262;
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+.user-profile img {
+  width: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.user-profile p {
+  margin-bottom: -5px;
+  font-weight: 500;
+  color: #626262;
+}
+.user-profile small {
+  font-size: 12px;
+}
+.post-input-container {
+  padding-left: 55px;
+  padding-top: 20px;
+}
+
+.post-input-container textarea {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #ccc;
+  resize: none;
+  background: transparent;
+}
+.add-post-links {
+  display: flex;
+  margin-top: 10px;
+}
+.add-post-links a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #626262;
+  margin-right: 30px;
+  font-size: 13px;
+}
+.add-post-links a img {
+  width: 20px;
+  margin-right: 10px;
+}
+/* -------post list------- */
+
+.post-container {
+  width: 100%;
+  background: var(--bg-color);
+  border-radius: 6px;
+  padding: 20px;
+  color: #626262;
+  margin: 20px 0;
+}
+
+.user-profile span {
+  font-size: 13px;
+  color: #9a9a9a;
+}
+
+.post-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-row a {
+  color: #9a9a9a;
+}
+
+.post-text {
+  color: #9a9a9a;
+  margin: 15px 0;
+  font-size: 15px;
+}
+.post-text span {
+  color: #626262;
+  font-weight: 500;
+}
+.post-text a {
+  color: #1876f2;
   text-decoration: none;
 }
-
-a:hover,
-a:focus {
-  color: var(--green);
-}
-
-.navbar-fixed-top .navbar-brand img {
-  margin-right: 10px;
-  max-height: 50px;
-}
-
-/* Navbar Styles */
-.navbar {
-  background-color: var(--white);
-  border-radius: 0;
-  margin-bottom: 0;
-  border-bottom: 2px solid var(--blue);
-}
-
-.navbar-fixed-top .navbar-nav > li > a {
-  color: var(--black);
-}
-
-.navbar-fixed-top .navbar-nav > li > a:hover {
-  color: var(--orange);
-}
-
-/* Buttons */
-.btn-primary,
-.btn-default {
+.post-img {
+  width: 100%;
   border-radius: 4px;
-  padding: 10px 20px;
-  margin: 5px;
+  margin-bottom: 5px;
 }
-
-.btn-primary {
-  background-color: var(--green);
-  border-color: var(--green);
+.activity-icons div img {
+  width: 18px;
+  margin-right: 10px;
 }
-
-.btn-primary:hover {
-  background-color: var(--purple);
+.activity-icons div {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 30px;
 }
-
-.btn-default {
-  background-color: var(--orange);
-  color: var(--white);
-  border-color: var(--orange);
+.post-profile-icon {
+  display: flex;
+  align-items: center;
 }
-
-.btn-default:hover {
-  background-color: var(--red);
-  border-color: var(--red);
-}
-
-/* Form and Input Styles */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-.form-control {
-  border: 1px solid var(--blue);
-  margin-bottom: 15px;
-}
-
-/* CTA Buttons */
-.cta-buttons a.btn {
-  margin: 20px 10px;
-  padding: 10px 30px;
-  font-size: 18px;
-}
-
-/* About Me Section */
-#about-me {
-  background-color: var(--white);
-  padding: 40px;
-  margin: 20px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Profile Page Specific Styles */
-.profile-page .profile-info,
-.profile-page .friends-list,
-.profile-page .feed {
-  background-color: var(--white);
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.profile-info img {
-  width: 100px; /* Adjust as needed */
-  height: 100px; /* Adjust as needed */
+.post-profile-icon img {
+  width: 20px;
   border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* --------settings-menu----------- */
+.settings-menu {
+  width: 90%;
+  max-width: 350px;
+  max-height: 0px;
+  background: var(--bg-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 108%;
+  right: 5%;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+.user-profile a {
+  font-size: 12px;
+  color: #1876f2;
+  text-decoration: none;
+}
+.settings-menu hr {
+  border: 0;
+  height: 1px;
+  background: #9a9a9a;
+  margin: 15px 0;
+}
+.settings-links {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+.settings-links .settings-icon {
+  width: 38px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.settings-links a {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #626262;
+}
+.settings-menu-height {
+  max-height: 450px;
+}
+.settings-menu-inner {
+  padding: 20px;
+}
+
+.load-more-btn {
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #9a9a9a;
+  color: #626262;
+  background: transparent;
+  border-radius: 4px;
+}
+.footer {
+  text-align: center;
+  color: #9a9a9a;
+  padding: 10px 0 20px;
+  font-size: 13px;
+}
+
+/* -------- profile page --------- */
+/* New Styles for Profile Page */
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
+}
+
+.profile-left,
+.profile-center,
+.profile-right {
+  flex-basis: 30%;
+}
+
+.user-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.username,
+.pronouns,
+.location,
+.favorite-movie-quote,
+.favorite-pizza,
+.least-favorite-topping,
+.favorite-crust-style,
+.go-to-pizza-place,
+.favorite-movie,
+.go-to-movie-genre,
+.favorite-movie-snack {
+  margin: 10px 0;
+  padding: 5px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+.user-feed {
+  background-color: var(--bg-color);
+  padding: 10px;
+  border-radius: 5px;
   margin-bottom: 20px;
 }
 
-.profile-info h3,
-.feed h4,
-.last-movie-watched h4,
-.favorite-pizza-place h4 {
-  color: var(--green);
+.pizzaspace-section,
+.moviespace-section {
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .navbar-header,
-  .navbar-collapse,
-  .navbar-nav > li > a,
-  body {
-    /* Adjustments for smaller screens */
+.pizzaspace-section h4,
+.moviespace-section h4 {
+  color: var(--nav-color);
+  margin-bottom: 10px;
+}
+
+/* Dudes Section */
+.dudes-section {
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.dudes-section h4 {
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.dudes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dude {
+  text-align: center;
+}
+
+.dude img {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.dude p {
+  font-size: 0.8em;
+}
+
+/* ---------------- home page media query ---------- */
+
+@media (max-width: 900px) {
+  nav {
+    flex-wrap: wrap;
+  }
+  .add-post-links {
+    flex-wrap: wrap;
+  }
+
+  .left-sidebar {
+    display: none;
+  }
+  .right-sidebar {
+    display: none;
+  }
+  .main-content {
+    flex-basis: 100%;
+  }
+  .logo {
+    width: 110px;
+    margin-right: 20px;
+  }
+  .search-box {
+    display: none;
+  }
+  .nav-left ul li img {
+    width: 20px;
+    margin: 0 8px;
+  }
+  .nav-user-icon img {
+    width: 30px;
+  }
+  .nav-user-icon {
+    margin-left: 0;
+  }
+  .story img {
+    width: 30px;
+    border-width: 3px;
+  }
+  .story p {
+    font-size: 10px;
+  }
+  .story.story1 img {
+    width: 25px;
+    bottom: 30px;
+  }
+  .post-input-container {
+    padding-left: 0;
+  }
+  .add-post-links a {
+    margin-right: 12px;
+    font-size: 9px;
+  }
+  .add-post-links a img {
+    width: 16px;
+    margin-right: 5px;
+  }
+}
+
+/* ---------------- profile page media query ---------- */
+
+@media (max-width: 900px) {
+  .profile-details {
+    flex-wrap: wrap;
+  }
+  .profile-info {
+    flex-wrap: wrap;
+  }
+
+  .profile-container {
+    padding: 20px 5%;
+  }
+  .pd-row div h3 {
+    font-size: 16px;
+  }
+  .pd-right {
+    margin-top: 15px;
+    text-align: left;
+  }
+  .pd-right button {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+  .info-col {
+    flex-basis: 100%;
+  }
+  .post-col {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .profile-left,
+  .profile-center,
+  .profile-right {
+    flex-basis: auto;
+    margin: 10px 0;
   }
 }
