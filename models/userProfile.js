@@ -24,5 +24,18 @@ UserProfile.init(
             type: DataTypes.STRING(25),
             allowNull: true,
         },
+    },
+
+    {
+        // Link to database connection
+        sequelize,
+        // Set to false to remove `created_at` and `updated_at` fields
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        // Assigning the name for our table 'UserProfile'
+        modelName: 'user_profile',
     }
 );
+
+module.exports = { UserProfile };
