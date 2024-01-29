@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIZZASPACE - Landing Page</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/c4254e24a8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-left">
+        <a href="explore.html"
+          ><img src="public/images/pslogo.png" class="logo"
+        /></a>
+      </div>
+
+      <div class="nav-right">
+        <!----------------- ADD HANDLING PROFILE LINKS----------->
+        <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+          <img src="public/images/tmnt/raphael.jpeg" />
+        </div>
+      </div>
+      <!-- ------dropdown-settings-menu--------- -->
+      <div class="settings-menu">
+        <div id="dark-btn">
+          <span></span>
+        </div>
+        <div class="settings-menu-inner">
+          <div class="user-profile">
+            <img src="images/tmnt/raphael.jpeg" />
+            <div>
+              <p>Raphael</p>
+              <a href="profile.html">See your profile</a>
+            </div>
+          </div>
+          <hr />
+          <div class="user-profile">
+            <img src="public/images/feedback.png" />
+            <div>
+              <p>Give Feedback</p>
+              <a href="">Help us improve the new deisgn</a>
+            </div>
+          </div>
+          <hr />
+          <div class="settings-links">
+            <img src="public/images/setting.png" class="settings-icon" />
+            <a href=""
+              >Settings & Privacy
+              <img src="public/images/arrow.png" width="10px"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img src="public/images/help.png" class="settings-icon" />
+            <a href=""
+              >Help & Support <img src="public/images/arrow.png" width="10px"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img src="public/images/display.png" class="settings-icon" />
+            <a href=""
+              >Display & Accessibility
+              <img src="public/images/arrow.png" width="10px"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img src="public/images/logout.png" class="settings-icon" />
+            <a href=""
+              >Logout <img src="public/images/arrow.png" width="10px"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="landing-container">
+      <div class="content-wrapper">
+        <header class="landing-header">
+          <h1>Welcome to PIZZASPACE</h1>
+          <p>Your ultimate hangout for pizza and movies!</p>
+        </header>
+
+        <section class="landing-main">
+          <div class="landing-info">
+            <h2>Discover the Best Pizza and Movies</h2>
+            <p>
+              Join a community where pizza lovers and movie buffs unite. Share,
+              discuss, and explore!
+            </p>
+            <!-- Add more info or images as needed -->
+          </div>
+
+<!-- Signup Popup Trigger -->
+<div class="landing-call-to-action">
+  <button id="signupBtn">Join Now</button>
+  <button class="btn-log-in">Log In</button>
+</div>
+
+<!-- Signup Popup Modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="signupForm">
+          <!-- Screen One: Basic Information -->
+          <div class="form-screen active" id="screenOne">
+              <input type="text" placeholder="Full Name" name="fullName">
+              <input type="email" placeholder="Email" name="email">
+              <input type="date" placeholder="Birthday" name="birthday">
+              <input type="text" placeholder="Username" name="username">
+              <input type="text" placeholder="Pronouns" name="pronouns">
+              <input type="text" placeholder="Location" name="location">
+              <button type="button" onclick="showNextScreen('screenOne', 'screenTwo')">Next</button>
+          </div>
+
+          <!-- Screen Two: Upload Profile Photo -->
+          <div class="form-screen" id="screenTwo" style="display: none;">
+              <input type="file" name="profilePhoto">
+              <button type="button" onclick="showNextScreen('screenTwo', 'screenThree')">Next</button>
+          </div>
+
+          <!-- Screen Three: PIZZASPACE Preferences -->
+          <div class="form-screen" id="screenThree" style="display: none;">
+              <input type="text" placeholder="Favorite Pizza" name="favoritePizza">
+              <input type="text" placeholder="Least Favorite Topping" name="leastFavTopping">
+              <input type="text" placeholder="Favorite Crust Style" name="favCrustStyle">
+              <input type="text" placeholder="Go to Pizza Place" name="pizzaPlace">
+              <button type="button" onclick="showNextScreen('screenThree', 'screenFour')">Next</button>
+          </div>
+
+          <!-- Screen Four: MOVIESPACE Preferences -->
+          <div class="form-screen" id="screenFour" style="display: none;">
+              <input type="text" placeholder="Favorite Movie" name="favoriteMovie">
+              <input type="text" placeholder="Favorite Movie Quote" name="movieQuote">
+              <input type="text" placeholder="Go to Movie Genre" name="movieGenre">
+              <input type="text" placeholder="Favorite Movie Snack" name="movieSnack">
+              <button type="submit">Submit</button>
+          </div>
+      </form>
+  </div>
+</div>
+
+
+      <div class="footer">
+        <p>Copyright 2024 - PIZZASPACE</p>
+      </div>
+
+    <script src="public/js/script.js"></script>
+  </body>
+</html>
