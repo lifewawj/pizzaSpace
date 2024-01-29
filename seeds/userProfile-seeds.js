@@ -1,5 +1,5 @@
 // Imports the UserProfile Model from the ../models folder with the userProfile.js file
-const { UserProfile } = require('../models');
+const { UserProfile } = require('../models/userProfile-model');
 
 // Stores the userProfileData inside an array following the UserProfile model
 const userProfileData = [
@@ -30,7 +30,7 @@ const userProfileData = [
 ];
 
 // Creates the seeds inputing it into the UserProfile Model
-const seedUserProfile = () => UserProfile.bulkCreate(userProfileData);
+const seedUserProfile = async () => await UserProfile.bulkCreate(userProfileData);
 
 // Exports the seedUserProfile const var
-module.exports = { seedUserProfile };
+module.exports = seedUserProfile;

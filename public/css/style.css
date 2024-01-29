@@ -1,3 +1,4 @@
+/* ----------GLOBAL---------- */
 * {
   margin: 0;
   padding: 0;
@@ -13,17 +14,12 @@
   --secondary-color: #212121;
 }
 
-.dark-theme {
-  --body-color: #0a0a0a;
-  --nav-color: #000;
-  --bg-color: #000;
-}
-
 body {
   background: var(--body-color);
   transition: background 0.3s;
 }
 
+/* ---------------NAV----------------- */
 nav {
   display: flex;
   align-items: center;
@@ -59,21 +55,14 @@ nav {
 .nav-user-icon img {
   width: 40px;
   border-radius: 50%;
-  cursor: pointer;
+  cursor: url("public/images/pizzacursor.png"), auto;
 }
 
 .nav-user-icon {
   margin-left: 30px;
 }
 
-.search-box {
-  background: #efefef;
-  width: 350px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  padding: 0 15px;
-}
+/* --------------EXPLORE----------------- */
 
 .dudes {
   position: relative;
@@ -226,9 +215,9 @@ nav {
   bottom: 5px;
 }
 
-/* ------------------ main content ------------- */
+/* ------------------ MAIN FEED - CENTER ------------- */
 
-/* ------------write post --------- */
+/* ------------WRITE POST--------- */
 .write-post-container {
   width: 100%;
   background: var(--bg-color);
@@ -282,7 +271,8 @@ nav {
   width: 20px;
   margin-right: 10px;
 }
-/* -------post list------- */
+
+/* -------FEED------- */
 
 .post-container {
   width: 100%;
@@ -395,16 +385,19 @@ nav {
   padding: 20px;
 }
 
+/* --------LOADMORE----------- */
 .load-more-btn {
   display: block;
   margin: auto;
-  cursor: pointer;
+  cursor: url("public/images/pizzacursor.png"), auto;
   padding: 5px 10px;
   border: 1px solid #9a9a9a;
   color: #626262;
   background: transparent;
   border-radius: 4px;
 }
+
+/* --------FOOTER----------- */
 .footer {
   text-align: center;
   color: #9a9a9a;
@@ -412,8 +405,8 @@ nav {
   font-size: 13px;
 }
 
-/* -------- profile page --------- */
-/* New Styles for Profile Page */
+/* --------PROFILE PAGE--------- */
+
 .profile-container {
   display: flex;
   justify-content: space-between;
@@ -495,7 +488,7 @@ nav {
 }
 
 .dude img {
-  width: 50px; /* Adjust size as needed */
+  width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-bottom: 5px;
@@ -505,7 +498,130 @@ nav {
   font-size: 0.8em;
 }
 
-/* ---------------- home page media query ---------- */
+/* ---------------- LANDING PAGE---------- */
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.content-wrapper {
+  max-width: 800px; /* Adjust as needed */
+  width: 100%;
+  text-align: center;
+}
+
+.landing-header,
+.landing-main {
+  margin-bottom: 20px;
+}
+
+.btn-signup,
+.btn-learn-more {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--nav-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-signup:hover,
+.btn-learn-more:hover {
+  background-color: darken(var(--nav-color), 10%);
+}
+
+/* ----------------SIGN UP POP UP FORM---------- */
+/* Styles for Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Styles for Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Styles for Form Screens */
+
+.form-screen {
+  display: none; /* Hide all screens initially */
+}
+
+.form-screen.active {
+  display: block; /* Show the active screen */
+  background-color: #fff; /* Optional: set a background color */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+}
+
+/* Styles for Inputs */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="file"] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Styles for Buttons */
+button {
+  background-color: #4caf50; /* Green background */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 90%;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ---------------- EXPLORE PAGE MEDIA QUERIES---------- */
 
 @media (max-width: 900px) {
   nav {
@@ -565,7 +681,7 @@ nav {
   }
 }
 
-/* ---------------- profile page media query ---------- */
+/* ---------------- PROFILE PAGE MEDIA QUERIES---------- */
 
 @media (max-width: 900px) {
   .profile-details {
@@ -607,5 +723,88 @@ nav {
   .profile-right {
     flex-basis: auto;
     margin: 10px 0;
+  }
+}
+
+/* ---------------- LANDING PAGE MEDIA QUERIES---------- */
+/* Base styles for landing page (Mobile-first approach) */
+.landing-container {
+}
+
+.content-wrapper {
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Media query for tablets and upwards (typically 768px and above) */
+@media (min-width: 768px) {
+  .content-wrapper {
+    max-width: 700px;
+  }
+
+  .landing-header h1 {
+    font-size: 24px;
+  }
+}
+
+/* Media query for desktops */
+@media (min-width: 992px) {
+  .content-wrapper {
+    max-width: 800px;
+  }
+
+  /* Adjustments for desktops */
+
+  .landing-header h1 {
+    font-size: 28px;
+  }
+}
+
+/* ---------------- SIGN UP POP UP FORM MEDIA QUERIES---------- */
+/* ... [Previous CSS styles] ... */
+
+/* Styles for smaller devices (Mobile) */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 90%; /* More width on smaller screens */
+    margin: 10% auto; /* Less margin from the top */
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="file"],
+  button {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+
+/* Styles for medium-sized devices (Tablets) */
+@media (min-width: 601px) and (max-width: 768px) {
+  .modal-content {
+    width: 70%; /* Slightly more width for tablets */
+  }
+
+  /* Adjust font sizes, paddings, margins if needed for tablet screens */
+  /* Example: */
+  .modal-content h2,
+  .modal-content p {
+    font-size: 16px;
+  }
+}
+
+/* Styles for large-sized devices (Desktops) */
+@media (min-width: 769px) {
+  .modal-content {
+    width: 50%; /* Suitable width for desktop screens */
+  }
+
+  /* Adjust font sizes, paddings, margins for larger desktop screens */
+  /* Example: */
+  .modal-content h2,
+  .modal-content p {
+    font-size: 18px;
   }
 }
