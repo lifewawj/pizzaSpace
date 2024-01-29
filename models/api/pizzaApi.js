@@ -19,7 +19,7 @@ function randomPizza(API_URL) {
 
 function renderPizza(res) {
   let ul = document.getElementById('pizzaOfDay');
-  p.textContent = '';
+  ul.textContent = '';
   res.results.forEach((pizzaOfDay) => {
     let li = document.createElement('li');
     li.appendChild(document.createTextNode(pizzaOfDay.title));
