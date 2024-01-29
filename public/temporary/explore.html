@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Space Explore Page</title>
+</head>
+<body>
+  <h1>Feed</h1>
+
+  <form id="postForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="content">Post Content:</label>
+    <textarea id="content" name="content" rows="4" required></textarea>
+
+    <button type="button" onclick="post()">Post</button>
+  </form>
+
+  <div id="feed"></div>
+
+  <script>
+    async function fetchPosts() {
+      const response = await fetch('/posts');
+      const data = await response.json();
+      return data;
+    }
+
+    async function post() {
+      const username = document.getElementById('username').value;
+      const content = document.getElementById('content').value;
+
+      if (username && content) {
+        const response = await fetch('/posts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, content }),
+        });
+
+        if (response.ok) {
+          const newPost = await response.json();
+          addPostToFeed(newPost);
+          document.getElementById('username').value = '';
+          document.getElementById('content').value = '';
+        } else {
+          console.error('Failed to create post');
+        }
+      }
+    }
+
+    function addPostToFeed(post) {
+      const feedDiv = document.getElementById('feed');
+      const postDiv = document.createElement('div');
+      postDiv.innerHTML = `<strong>${post.username}</strong>: ${post.content}`;
+      feedDiv.insertBefore(postDiv, feedDiv.firstChild);
+    }
+
+    async function initialize() {
+      const initialPosts = await fetchPosts();
+      initialPosts.forEach(addPostToFeed);
+    }
+
+    initialize();
+  </script>
+</body>
+</html>
