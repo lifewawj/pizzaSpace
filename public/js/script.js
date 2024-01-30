@@ -94,6 +94,54 @@ function showNextScreen(currentScreenId, nextScreenId) {
 /* WATCHING */
 /* MOVIE API */
 
+/* New Post */
+async function fetchPosts() {
+  const response = await fetch('/posts');
+  const data = await response.json();
+  return data;
+}
+
+async function post() {
+  const username = document.getElementById('username').value;
+  const imageUrl = document.getElementById('imageUrl').value;
+  const caption = document.getElementById('caption').value;
+
+  if (username && imageUrl) {
+      const response = await fetch('/posts', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, imageUrl, caption }),
+      });
+
+      if (response.ok) {
+          const newPost = await response.json();
+          addPostToFeed(newPost);
+          document.getElementById('username').value = '';
+          document.getElementById('imageUrl').value = '';
+          document.getElementById('caption').value = '';
+      } else {
+          console.error('Failed to create post');
+      }
+  }
+}
+
+function addPostToFeed(post) {
+  const feedDiv = document.getElementById('feed');
+  const postDiv = document.createElement('div');
+  postDiv.innerHTML = `<strong>${post.username}</strong>: ${post.caption}<br>
+                       <img src="${post.imageUrl}" alt="Post Image">`;
+  feedDiv.insertBefore(postDiv, feedDiv.firstChild);
+}
+
+async function initialize() {
+  const initialPosts = await fetchPosts();
+  initialPosts.forEach(addPostToFeed);
+}
+
+initialize();
+
 /* LOAD MORE BUTTON */
 
 /* LEFT CONTAINER */
